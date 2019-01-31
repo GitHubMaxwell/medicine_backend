@@ -4,6 +4,11 @@ import sendJSON from '../middleware/sendJSON.js';
 // import sendTest from '../middleware/sendTest.js';
 const router = express.Router();
 
+router.get('/', (req, res) => {
+  res.send('Medicine Backend');
+  res.end();
+});
+
 // MEDICINE SEARCH
 router.get('/api/v1/search/:name', (req, res, next) => {
   console.log('REQ PARAMS NAME: ', req.params.name);
