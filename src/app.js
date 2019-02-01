@@ -1,14 +1,13 @@
 import cors from 'cors';
 import express from 'express';
-import router from './api/api';
+import userRouter from './api/user-api';
 import searchRouter from './api/search-api';
 
 const app = express();
 
 app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(router);
+app.use(userRouter);
 app.use(searchRouter);
 
 let serverOn = false;

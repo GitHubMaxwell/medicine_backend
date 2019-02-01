@@ -12,7 +12,8 @@ router.get('/api/v1/user/:id', (req, res, next) => {
   if (!req.params.id) {
     noId(res);
   }
-  User.findById(req.params.id)
+  User.find({ username: req.params.id })
+    // User.findById(req.params.id)
     .then(data => sendJSON(res, data))
     .catch(next);
 });
